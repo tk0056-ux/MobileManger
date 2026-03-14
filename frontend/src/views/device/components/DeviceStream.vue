@@ -84,10 +84,10 @@
       // 如果服务器URL是相对路径，添加当前站点的协议和主机名
       const protocol = window.location.protocol;
       const host = window.location.host;
-      fullStreamUrl = `${protocol}//${host}${wscrcpyBaseUrl.value}/#!action=stream&udid=${encodedDeviceId}&player=webcodecs&ws=${wsUrl}`;
+      fullStreamUrl = `${protocol}//${host}${wscrcpyBaseUrl.value}/#!action=stream&udid=${encodedDeviceId}&player=tinyh264&ws=${wsUrl}`;
     } else {
       // 如果已经是完整URL
-      fullStreamUrl = `${wscrcpyBaseUrl.value}/#!action=stream&udid=${encodedDeviceId}&player=webcodecs&ws=${wsUrl}`;
+      fullStreamUrl = `${wscrcpyBaseUrl.value}/#!action=stream&udid=${encodedDeviceId}&player=tinyh264&ws=${wsUrl}`;
     }
     
     console.log('构建串流URL:', fullStreamUrl);
