@@ -1,24 +1,16 @@
 @echo off
-chcp 65001
-title 项目启动脚本
+title MobileManager_Starter
 
-echo 正在启动所有服务...
+echo [1/3] Starting Backend...
+start "Backend" cmd /c "cd backend && go run main.go"
 
-:: 启动后端服务
-echo 正在启动后端服务...
-start "后端服务" cmd /c "cd backend && go run main.go"
+echo [2/3] Starting Wscrcpy...
+start "Wscrcpy" cmd /c "cd wscrcpy && pnpm start"
 
-:: 启动 wscrcpy 服务
-echo 正在启动 wscrcpy 服务...
-start "wscrcpy服务" cmd /c "cd wscrcpy && pnpm start"
-
-:: 启动前端服务
-echo 正在启动前端服务...
-start "前端服务" cmd /c "cd frontend && pnpm run dev"
+echo [3/3] Starting Frontend...
+start "Frontend" cmd /c "cd frontend && pnpm run dev"
 
 echo.
-echo 所有服务已启动！
-echo 请查看各个命令窗口的具体输出信息。
-echo.
-echo 按任意键退出此窗口...
-pause > nul 
+echo All services are starting! 
+echo Please wait for a few seconds...
+pause
